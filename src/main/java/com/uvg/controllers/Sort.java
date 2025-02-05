@@ -183,27 +183,27 @@ package com.uvg.controllers;
              *
              * @param arr The array to be sorted.
              */
-            public void bucketSort(float[] arr) {
+            public void bucketSort(int[] arr) {
                 int n = arr.length;
-                ArrayList<Float>[] buckets = new ArrayList[n];
+                ArrayList<Integer>[] buckets = new ArrayList[n];
                 for (int i = 0; i < n; i++) {
                     buckets[i] = new ArrayList<>();
                 }
-                for (float num : arr) {
-                    int index = (int) (n * num);
+                for (int num : arr) {
+                    // Asegura que el índice no sea igual a n
+                    int index = Math.min(n - 1, (int) (n * num));
                     buckets[index].add(num);
                 }
-                for (ArrayList<Float> bucket : buckets) {
+                for (ArrayList<Integer> bucket : buckets) {
                     Collections.sort(bucket);
                 }
                 int index = 0;
-                for (ArrayList<Float> bucket : buckets) {
-                    for (float num : bucket) {
+                for (ArrayList<Integer> bucket : buckets) {
+                    for (int num : bucket) {
                         arr[index++] = num;
                     }
                 }
             }
-
             /**
              * Sorts the specified array using the Heap Sort algorithm.
              *

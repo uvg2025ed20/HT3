@@ -4,6 +4,11 @@ package com.uvg;
         import com.uvg.controllers.Sort;
         import java.util.Random;
         import java.util.Arrays;
+        import java.io.BufferedReader;
+        import java.io.FileReader;
+        import java.io.IOException;
+        import java.util.ArrayList;
+        import java.util.List;
 
         /**
          * The App class demonstrates the usage of various sorting algorithms
@@ -20,7 +25,7 @@ package com.uvg;
              */
             public static void main(String[] args) {
                 // Create an array of 3000 random integers
-                Integer[] numbers = new Integer[3000];
+                Integer[] numbers = loadNumbersFromCSV("./src/main/java/com/uvg/numeros.csv");
                 Random random = new Random();
                 for (int i = 0; i < numbers.length; i++) {
                     numbers[i] = random.nextInt(10000);
@@ -59,6 +64,21 @@ package com.uvg;
                 sorter.heapSort(numbers);
                 System.out.println(" ** Arreglo ordenado con Heap Sort **");
                 System.out.println(Arrays.toString(numbers));
+
+                int[] intNumbers = Arrays.stream(numbers).mapToInt(Integer::intValue).toArray();
+
+                sorter.myCompare = comparator;
+                sorter.radixSort(intNumbers);
+                System.out.println(" ** Arreglo ordenado con Radix Sort **");
+                System.out.println(Arrays.toString(numbers));
+
+                int[] intNumbersBucket = Arrays.stream(numbers).mapToInt(Integer::intValue).toArray();
+
+                sorter.myCompare = comparator;
+                sorter.bucketSort(intNumbersBucket);
+                System.out.println(" ** Arreglo ordenado con Bucket Sort **");
+                System.out.println(Arrays.toString(numbers));
+
             }
 
             /**
@@ -66,10 +86,31 @@ package com.uvg;
              *
              * @param arr The array to be printed.
              */
-            private static void printArray(Integer[] arr) {
-                for (int i = 0; i < Math.min(arr.length, 20); i++) {
-                    System.out.print(arr[i] + " ");
+            /**
+             * Loads numbers from a CSV file into an Integer array.
+             *
+             * @param filename The name of the CSV file.
+             * @return An Integer array containing the numbers from the file.
+             */
+            private static Integer[] loadNumbersFromCSV(String filename) {
+                List<Integer> numberList = new ArrayList<>();
+                try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        String[] numbers = line.split(",");
+                        for (String numStr : numbers) {
+                            try {
+                                numberList.add(Integer.parseInt(numStr.trim()));
+                            } catch (NumberFormatException e) {
+                                System.err.println("Invalid number: " + numStr);
+                            }
+                        }
+                    }
+                } catch (IOException e) {
+                    System.err.println("Error reading the file: " + e.getMessage());
                 }
-                System.out.println("...");
+
+
+                return numberList.toArray(new Integer[0]);
             }
         }
