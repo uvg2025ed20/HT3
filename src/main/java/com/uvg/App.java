@@ -2,9 +2,6 @@ package com.uvg;
 
         import com.uvg.controllers.IComparator;
         import com.uvg.controllers.Sort;
-
-        import java.util.Comparator;
-        import java.util.Scanner;
         import java.util.Random;
         import java.util.Arrays;
 
@@ -28,10 +25,6 @@ package com.uvg;
                 for (int i = 0; i < numbers.length; i++) {
                     numbers[i] = random.nextInt(10000);
                 }
-
-                // Print the original array
-                System.out.println(" ** Arreglo original **");
-                printArray(numbers);
 
                 // Create a comparator for comparing integers
                 IComparator<Integer> comparator = new IComparator<Integer>() {

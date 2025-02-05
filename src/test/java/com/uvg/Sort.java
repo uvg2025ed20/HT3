@@ -1,4 +1,4 @@
-package com.uvg.controllers;
+package com.uvg;
 
         import java.util.Arrays;
         import java.util.ArrayList;

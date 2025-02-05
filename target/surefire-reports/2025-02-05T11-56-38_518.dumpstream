@@ -1,0 +1,96 @@
+# Created at 2025-02-05T11:56:39.511
+feb 05, 2025 11:56:39 A. M. org.junit.platform.launcher.core.DefaultLauncher handleThrowable
+
+# Created at 2025-02-05T11:56:39.517
+WARNING: TestEngine with ID 'junit-jupiter' failed to discover tests
+
+# Created at 2025-02-05T11:56:39.518
+org.junit.platform.commons.JUnitException: OutputDirectoryProvider not available; probably due to unaligned versions of the junit-platform-engine and junit-platform-launcher jars on the classpath/module path.
+
+# Created at 2025-02-05T11:56:39.519
+	at org.junit.platform.engine.EngineDiscoveryRequest.getOutputDirectoryProvider(EngineDiscoveryRequest.java:94)
+
+# Created at 2025-02-05T11:56:39.520
+	at org.junit.jupiter.engine.JupiterTestEngine.discover(JupiterTestEngine.java:67)
+
+# Created at 2025-02-05T11:56:39.521
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:168)
+
+# Created at 2025-02-05T11:56:39.522
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:155)
+
+# Created at 2025-02-05T11:56:39.523
+	at org.junit.platform.launcher.core.DefaultLauncher.discover(DefaultLauncher.java:120)
+
+# Created at 2025-02-05T11:56:39.524
+	at org.apache.maven.surefire.junitplatform.TestPlanScannerFilter.accept(TestPlanScannerFilter.java:56)
+
+# Created at 2025-02-05T11:56:39.525
+	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:102)
+
+# Created at 2025-02-05T11:56:39.526
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.scanClasspath(JUnitPlatformProvider.java:129)
+
+# Created at 2025-02-05T11:56:39.527
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:117)
+
+# Created at 2025-02-05T11:56:39.528
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+
+# Created at 2025-02-05T11:56:39.529
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+
+# Created at 2025-02-05T11:56:39.530
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+
+# Created at 2025-02-05T11:56:39.532
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+# Created at 2025-02-05T11:56:39.533
+
+
+# Created at 2025-02-05T11:56:39.546
+feb 05, 2025 11:56:39 A. M. org.junit.platform.launcher.core.DefaultLauncher handleThrowable
+
+# Created at 2025-02-05T11:56:39.547
+WARNING: TestEngine with ID 'junit-jupiter' failed to discover tests
+
+# Created at 2025-02-05T11:56:39.548
+org.junit.platform.commons.JUnitException: OutputDirectoryProvider not available; probably due to unaligned versions of the junit-platform-engine and junit-platform-launcher jars on the classpath/module path.
+
+# Created at 2025-02-05T11:56:39.549
+	at org.junit.platform.engine.EngineDiscoveryRequest.getOutputDirectoryProvider(EngineDiscoveryRequest.java:94)
+
+# Created at 2025-02-05T11:56:39.550
+	at org.junit.jupiter.engine.JupiterTestEngine.discover(JupiterTestEngine.java:67)
+
+# Created at 2025-02-05T11:56:39.551
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:168)
+
+# Created at 2025-02-05T11:56:39.552
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:155)
+
+# Created at 2025-02-05T11:56:39.553
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+
+# Created at 2025-02-05T11:56:39.554
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:142)
+
+# Created at 2025-02-05T11:56:39.555
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:117)
+
+# Created at 2025-02-05T11:56:39.556
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+
+# Created at 2025-02-05T11:56:39.557
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+
+# Created at 2025-02-05T11:56:39.557
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+
+# Created at 2025-02-05T11:56:39.559
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+# Created at 2025-02-05T11:56:39.560
+
+
