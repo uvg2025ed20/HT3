@@ -185,20 +185,27 @@ package com.uvg.controllers;
              */
             public void bucketSort(int[] arr) {
                 int n = arr.length;
+                if (n <= 0) return;
+
+                // Encuentra el valor máximo en el array para normalizar los valores
+                int maxValue = findMax(arr);
+
+                // Crea los buckets
                 ArrayList<Integer>[] buckets = new ArrayList[n];
                 for (int i = 0; i < n; i++) {
                     buckets[i] = new ArrayList<>();
                 }
+
+                // Distribuye los elementos en los buckets
                 for (int num : arr) {
-                    // Asegura que el índice no sea igual a n
-                    int index = Math.min(n - 1, (int) (n * num));
+                    int index = (int) ((double) num / (maxValue + 1) * n);
                     buckets[index].add(num);
                 }
-                for (ArrayList<Integer> bucket : buckets) {
-                    Collections.sort(bucket);
-                }
+
+                // Ordena cada bucket y combina los resultados
                 int index = 0;
                 for (ArrayList<Integer> bucket : buckets) {
+                    Collections.sort(bucket);
                     for (int num : bucket) {
                         arr[index++] = num;
                     }
