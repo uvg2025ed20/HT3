@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.uvg.AppTest" time="0.048" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.uvg.AppTest" time="0.072" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="MX"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11\bin"/>
-    <property name="sun.java.command" value="C:\Users\angel\AppData\Local\Temp\surefire3834690526223743330\surefirebooter8965345036476726833.jar C:\Users\angel\AppData\Local\Temp\surefire3834690526223743330 2025-02-05T12-11-24_254-jvmRun1 surefire11800562703661227894tmp surefire_03985742814653891435tmp"/>
+    <property name="sun.java.command" value="C:\Users\angel\AppData\Local\Temp\surefire17989376671909615401\surefirebooter8790862200680106950.jar C:\Users\angel\AppData\Local\Temp\surefire17989376671909615401 2025-02-06T22-16-45_626-jvmRun1 surefire16599135796234591859tmp surefire_018283004281364007552tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\angel\OneDrive\Escritorio\HT3\HT3\target\test-classes;C:\Users\angel\OneDrive\Escritorio\HT3\HT3\target\classes;C:\Users\angel\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.1\junit-jupiter-api-5.7.1.jar;C:\Users\angel\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\angel\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\angel\.m2\repository\org\junit\platform\junit-platform-commons\1.7.1\junit-platform-commons-1.7.1.jar;C:\Users\angel\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.1\junit-jupiter-engine-5.7.1.jar;C:\Users\angel\.m2\repository\org\junit\platform\junit-platform-engine\1.7.1\junit-platform-engine-1.7.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\angel\AppData\Local\Temp\surefire3834690526223743330\surefirebooter8965345036476726833.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\angel\AppData\Local\Temp\surefire17989376671909615401\surefirebooter8790862200680106950.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.24+7-LTS-271"/>
@@ -61,10 +61,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testMergeSort" classname="com.uvg.AppTest" time="0.029"/>
-  <testcase name="testHeapSort" classname="com.uvg.AppTest" time="0.001"/>
-  <testcase name="testRadixSort" classname="com.uvg.AppTest" time="0.002"/>
+  <testcase name="testMergeSort" classname="com.uvg.AppTest" time="0.044"/>
+  <testcase name="testHeapSort" classname="com.uvg.AppTest" time="0"/>
+  <testcase name="testRadixSort" classname="com.uvg.AppTest" time="0.003"/>
   <testcase name="testBucketSort" classname="com.uvg.AppTest" time="0.003"/>
-  <testcase name="testInsertionSort" classname="com.uvg.AppTest" time="0"/>
-  <testcase name="testQuickSort" classname="com.uvg.AppTest" time="0.001"/>
+  <testcase name="testInsertionSort" classname="com.uvg.AppTest" time="0.001"/>
+  <testcase name="testQuickSort" classname="com.uvg.AppTest" time="0"/>
 </testsuite>
