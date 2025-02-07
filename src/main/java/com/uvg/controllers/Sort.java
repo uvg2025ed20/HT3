@@ -7,7 +7,8 @@ package com.uvg.controllers;
         /**
          * The Sort class provides various sorting algorithms that can be used
          * to sort arrays of generic type T.
-         *
+         * @author Angel Sanabria
+         * @author Pablo Vasquez
          * @param <T> The type of elements to be sorted.
          */
         public class Sort<T> {

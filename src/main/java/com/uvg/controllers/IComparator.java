@@ -2,7 +2,8 @@ package com.uvg.controllers;
 
     /**
      * The IComparator interface provides a method for comparing two objects of type T.
-     *
+     * @author Angel Sanabria
+     * @author Pablo Vasquez
      * @param <T> The type of objects that this comparator can compare.
      */
     public interface IComparator<T> {

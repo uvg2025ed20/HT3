@@ -11,15 +11,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The App class demonstrates the usage of various sorting algorithms
+ * (Insertion Sort, Merge Sort, Quick Sort, Heap Sort, Radix Sort, and Bucket Sort)
+ * on an array of random integers.
+ *
+ * It generates a list of random numbers, saves them to a CSV file,
+ * loads them from the file, and sorts them using different sorting algorithms.
+ *
+ * @author Angel Sanabria
+ * @author Pablo Vasquez
+ */
 public class App {
+    /**
+     * The main method is the entry point of the application.
+     * It generates an array of random integers, sorts it using different
+     * sorting algorithms, and prints the results.
+     *
+     * @param args Command line arguments (not used).
+     */
     public static void main(String[] args) {
-        // Generar y guardar 4000 números aleatorios de 4 dígitos en un CSV
-        generateAndSaveRandomNumbersToCSV("./src/main/java/com/uvg/numeros.csv", 15000);
+        generateAndSaveRandomNumbersToCSV("./src/main/java/com/uvg/numeros.csv", 3000);
 
-        // Cargar los números desde el CSV
         Integer[] numbers = loadNumbersFromCSV("./src/main/java/com/uvg/numeros.csv");
 
-        // Crear un comparador para comparar enteros
         IComparator<Integer> comparator = new IComparator<Integer>() {
             @Override
             public int Compare(Integer _object1, Integer _object2) {
@@ -27,68 +42,56 @@ public class App {
             }
         };
 
-        // Crear un objeto Sort con el comparador
+        // Create a Sort object with the comparator
         Sort<Integer> sorter = new Sort<>(comparator);
 
-        // Medir el tiempo de ejecución para cada algoritmo
+        // Sort using Merge Sort
+        sorter.myCompare = comparator;
+        sorter.mergeSort(numbers);
 
-        // Insertion Sort
-        Integer[] numbersForInsertionSort = Arrays.copyOf(numbers, numbers.length);
-        long startTime = System.nanoTime();
-        sorter.insertionSort(numbersForInsertionSort);
-        long endTime = System.nanoTime();
-        System.out.println("Tiempo de ejecución de Insertion Sort: " + (endTime - startTime) + " nanosegundos");
+        // Sort using Quick Sort
+        sorter.myCompare = comparator;
+        sorter.quickSort(numbers, 0, numbers.length - 1);
 
-        // Merge Sort
-        Integer[] numbersForMergeSort = Arrays.copyOf(numbers, numbers.length);
-        startTime = System.nanoTime();
-        sorter.mergeSort(numbersForMergeSort);
-        endTime = System.nanoTime();
-        System.out.println("Tiempo de ejecución de Merge Sort: " + (endTime - startTime) + " nanosegundos");
+        // Sort using Heap Sort
+        sorter.myCompare = comparator;
+        sorter.heapSort(numbers);
 
-        // Quick Sort
-        Integer[] numbersForQuickSort = Arrays.copyOf(numbers, numbers.length);
-        startTime = System.nanoTime();
-        sorter.quickSort(numbersForQuickSort, 0, numbersForQuickSort.length - 1);
-        endTime = System.nanoTime();
-        System.out.println("Tiempo de ejecución de Quick Sort: " + (endTime - startTime) + " nanosegundos");
-
-        // Heap Sort
-        Integer[] numbersForHeapSort = Arrays.copyOf(numbers, numbers.length);
-        startTime = System.nanoTime();
-        sorter.heapSort(numbersForHeapSort);
-        endTime = System.nanoTime();
-        System.out.println("Tiempo de ejecución de Heap Sort: " + (endTime - startTime) + " nanosegundos");
-
-        // Radix Sort
+        // Convert Integer array to int array for Radix Sort
         int[] intNumbers = Arrays.stream(numbers).mapToInt(Integer::intValue).toArray();
-        startTime = System.nanoTime();
+        sorter.myCompare = comparator;
         sorter.radixSort(intNumbers);
-        endTime = System.nanoTime();
-        System.out.println("Tiempo de ejecución de Radix Sort: " + (endTime - startTime) + " nanosegundos");
 
-        // Bucket Sort
+        // Convert Integer array to int array for Bucket Sort
         int[] intNumbersBucket = Arrays.stream(numbers).mapToInt(Integer::intValue).toArray();
-        startTime = System.nanoTime();
+        sorter.myCompare = comparator;
         sorter.bucketSort(intNumbersBucket);
-        endTime = System.nanoTime();
-        System.out.println("Tiempo de ejecución de Bucket Sort: " + (endTime - startTime) + " nanosegundos");
     }
 
-    // Método para generar números aleatorios y guardarlos en un archivo CSV
+    /**
+     * Generates a list of random 4-digit numbers and saves them to a CSV file.
+     *
+     * @param filename The name of the CSV file where the numbers will be saved.
+     * @param count The number of random numbers to generate.
+     */
     private static void generateAndSaveRandomNumbersToCSV(String filename, int count) {
         Random random = new Random();
         try (FileWriter writer = new FileWriter(filename)) {
             for (int i = 0; i < count; i++) {
-                int number = 1000 + random.nextInt(9000); // Generar un número de 4 dígitos
+                int number = 1000 + random.nextInt(9000); // Generate a 4-digit number
                 writer.write(number + (i < count - 1 ? "," : ""));
             }
         } catch (IOException e) {
-            System.err.println("Error al escribir en el archivo: " + e.getMessage());
+            System.err.println("Error writing to the file: " + e.getMessage());
         }
     }
 
-    // Método para cargar números desde un archivo CSV en un arreglo de Integer
+    /**
+     * Loads numbers from a CSV file into an Integer array.
+     *
+     * @param filename The name of the CSV file to read from.
+     * @return An Integer array containing the numbers read from the file.
+     */
     private static Integer[] loadNumbersFromCSV(String filename) {
         List<Integer> numberList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -99,12 +102,12 @@ public class App {
                     try {
                         numberList.add(Integer.parseInt(numStr.trim()));
                     } catch (NumberFormatException e) {
-                        System.err.println("Número inválido: " + numStr);
+                        System.err.println("Invalid number: " + numStr);
                     }
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error al leer el archivo: " + e.getMessage());
+            System.err.println("Error reading the file: " + e.getMessage());
         }
 
         return numberList.toArray(new Integer[0]);
